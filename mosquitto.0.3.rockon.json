@@ -1,7 +1,7 @@
 {
     "Mosquitto": {
-        "description": "Eclipse Mosquitto An open source MQTT broker",
-        "version": "0.2",
+        "description": "Eclipse Mosquitto An open source MQTT broker. Version 1.6.12",
+        "version": "0.3",
         "website": "https://mosquitto.org",
         "icon": "https://mosquitto.org/images/mosquitto-text-side-28.png",
         "more_info": "https://mosquitto.org/man/mosquitto-8.html",
@@ -9,7 +9,7 @@
         "containers": {
             "mosquitto_service": {
                 "image": "eclipse-mosquitto",
-                "tag": "1.6.8",
+                "tag": "1.6.12",
                 "launch_order": "1",
                 "opts": [
                     [
