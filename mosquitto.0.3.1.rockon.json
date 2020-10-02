@@ -1,7 +1,7 @@
 {
     "Mosquitto": {
         "description": "Eclipse Mosquitto An open source MQTT broker. Version 1.6.12",
-        "version": "0.3",
+        "version": "0.3.1",
         "website": "https://mosquitto.org",
         "icon": "https://mosquitto.org/images/mosquitto-text-side-28.png",
         "more_info": "https://mosquitto.org/man/mosquitto-8.html",
@@ -11,12 +11,6 @@
                 "image": "eclipse-mosquitto",
                 "tag": "1.6.12",
                 "launch_order": "1",
-                "opts": [
-                    [
-                        "--net",
-                        "host"
-                    ]
-                ],
                 "ports": {
                     "1883": {
                         "description": "Used for MQTT (1883)",
@@ -30,7 +24,7 @@
                     }
                 },
                 "volumes": {
-                    "/mosquitto/": {
+                    "/mosquitto/config/": {
                         "description": "Configurations, Data and Logs for Mosquitto (ie. mosquitto.conf)",
                         "label": "Mosquitto Persistence",
                         "min_size": 1000
