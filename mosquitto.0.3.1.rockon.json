@@ -24,7 +24,7 @@
                     }
                 },
                 "volumes": {
-                    "/mosquitto/config/": {
+                    "/mosquitto/": {
                         "description": "Configurations, Data and Logs for Mosquitto (ie. mosquitto.conf)",
                         "label": "Mosquitto Persistence",
                         "min_size": 1000
