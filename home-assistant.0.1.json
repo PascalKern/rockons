@@ -7,16 +7,10 @@
     "website": "https://home-assistant.io/",
     "version": "0.1",
     "containers": {
-      "home-assistant": {
+      "home-assistant_service": {
         "image": "homeassistant/home-assistant",
 	"tag": "0.115.6",
         "launch_order": 1,
-        "opts": [
-          [
-            "--net",
-            "host"
-          ]
-        ],
         "uid": -1,
         "ports": {
           "8123": {
