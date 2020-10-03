@@ -12,7 +12,7 @@ METASTORE=/root/rockons-metastore
 rock_meta_store=$ROCK_BASE/rockons-metastore
 
 rm -rf $rock_meta_store/* > /dev/null
-mkdir $rock_meta_store 2&> /dev/null || echo "Metastore exists: $rock_meta_store"
+mkdir $rock_meta_store 2> /dev/null || echo "Metastore exists: $rock_meta_store"
 
 for f in $METASTORE/*.json; do
 	echo "Create link: $rock_meta_store/$(basename $f) -> $f" 
