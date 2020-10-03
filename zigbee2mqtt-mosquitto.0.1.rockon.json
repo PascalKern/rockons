@@ -6,15 +6,14 @@
         "icon": "https://www.zigbee2mqtt.io/images/logo.png",
         "more_info": "https://github.com/koenkk/zigbee2mqtt",
         "container_links": {
-            "zigbee2mqtt": [{
-                "name": "zigbee2mqtt",
-                "source_container": "mosquitto_srvc"
-            }],
-            "mosquitto": [{
-                "name": "mosquitto",
-                "source_container": "zigbee2mqtt_srvc"
-            }]
+            "zigbee2mqtt_srvc": [
+                {
+                    "name": "mosquitto",
+                    "source_container": "mosquitto_srvc"
+                 }
+             ]
         },
+        "volume_add_support": true,
         "containers": {
             "zigbee2mqtt_srvc": {
                 "image": "koenkk/zigbee2mqtt",
@@ -29,11 +28,15 @@
                 },
                 "opts": [
                     [
-            			"-v",
-            			"/dev/udev:/run/udev:ro",
+                        "-v",
+                        "/dev/udev:/run/udev:ro",
                         "--privileged",
                         "true"
-        		    ]
+                    ],
+                    [
+                        "--net",
+                        "host"
+                    ]
                 ],
                 "environment": {
                     "TZ": {
@@ -45,8 +48,7 @@
                 "devices": {
                     "/dev/ttyACM0": {
                         "description": "Location of adapter (e.g. CC2531) [Eg: path to device (/dev/xxx)]",
-                        "label": "Location of adapter (e.g. CC2531) (/dev/ttyACM0)",
-                        "index": 1
+                        "label": "Location of adapter (e.g. CC2531) (/dev/ttyACM0)"
                     }
                 }
             },
@@ -77,3 +79,4 @@
         }
     }
 }
+
