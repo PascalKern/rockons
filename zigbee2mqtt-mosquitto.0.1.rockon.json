@@ -1,0 +1,79 @@
+{ 
+    "MQTT": {
+        "description": "Run Zigbee2mqtt and Eclipse Mosquitto n this Rockstor instance as Rockon.",
+        "version": "0.1",
+        "website": "https://www.zigbee2mqtt.io/information/docker.html",
+        "icon": "https://www.zigbee2mqtt.io/images/logo.png",
+        "more_info": "https://github.com/koenkk/zigbee2mqtt",
+        "container_links": {
+            "zigbee2mqtt": [{
+                "name": "zigbee2mqtt",
+                "source_container": "mosquitto_srvc"
+            }],
+            "mosquitto": [{
+                "name": "mosquitto",
+                "source_container": "zigbee2mqtt_srvc"
+            }]
+        },
+        "containers": {
+            "zigbee2mqtt_srvc": {
+                "image": "koenkk/zigbee2mqtt",
+                "tag": "1.10.0",
+                "launch_order": "2",
+                "volumes": {
+                    "/app/data": {
+                        "description": "Storage for the Zigbee2mqtt configuration data.",
+                        "label": "Zigbee2MQTT Configuration",
+                        "min_size": 5000
+                    }
+                },
+                "opts": [
+                    [
+            			"-v",
+            			"/dev/udev:/run/udev:ro",
+                        "--privileged",
+                        "true"
+        		    ]
+                ],
+                "environment": {
+                    "TZ": {
+                        "description": "Timezone to be used for this Zigbee2mqtt container. (ie. Europe/Zurich)",
+                        "label": "TimeZone",
+                        "index": 1
+                    }
+                },
+                "devices": {
+                    "/dev/ttyACM0": {
+                        "description": "Location of adapter (e.g. CC2531) [Eg: path to device (/dev/xxx)]",
+                        "label": "Location of adapter (e.g. CC2531) (/dev/ttyACM0)",
+                        "index": 1
+                    }
+                }
+            },
+            "mosquitto_srvc": {
+                "image": "eclipse-mosquitto",
+                "tag": "1.6.12",
+                "launch_order": "1",
+                "ports": {
+                    "1883": {
+                        "description": "Used for MQTT (1883)",
+                        "label": "MQTT",
+                        "host_default": 1883
+                    },
+                    "9001": {
+                        "description": "Used for WebUI? (9001)",
+                        "label": "WebUI?",
+                        "host_default": 9001
+                    }
+                },
+                "volumes": {
+                    "/mosquitto/": {
+                        "description": "Configurations, Data and Logs for Mosquitto (ie. mosquitto.conf)",
+                        "label": "Mosquitto Persistence",
+                        "min_size": 1000
+                    }
+                }
+            }
+        }
+    }
+}
