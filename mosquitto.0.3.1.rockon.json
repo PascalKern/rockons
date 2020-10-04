@@ -16,15 +16,10 @@
                         "description": "Used for MQTT (1883)",
                         "label": "MQTT protocol",
                         "host_default": 1883
-                    },
-                    "9001": {
-                        "description": "Used for Websocket (9001)",
-                        "label": "Websocket protocol",
-                        "host_default": 9001
                     }
                 },
                 "volumes": {
-                    "/mosquitto/": {
+                    "/mosquitto": {
                         "description": "Configurations, Data and Logs for Mosquitto (ie. mosquitto.conf)",
                         "label": "Mosquitto Persistence",
                         "min_size": 1000
