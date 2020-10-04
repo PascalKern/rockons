@@ -1,7 +1,7 @@
 {
     "Zigbee2MQTT": {
-        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon. Version: 0.3.a",
-        "version": "0.3.a",
+        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon. Version: 0.4",
+        "version": "0.4",
         "website": "https://www.zigbee2mqtt.io/information/docker.html",
         "icon": "https://www.zigbee2mqtt.io/images/logo.png",
         "more_info": "https://github.com/koenkk/zigbee2mqtt",
