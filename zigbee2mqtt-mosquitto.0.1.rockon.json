@@ -8,7 +8,7 @@
         "container_links": {
             "zigbee2mqtt_srvc": [
                 {
-                    "name": "mosquitto",
+                    "name": "mosquitto_srvc",
                     "source_container": "mosquitto_srvc"
                  }
              ]
@@ -32,8 +32,8 @@
                         "/dev/udev:/run/udev:ro"
                     ],
                     [
-                        "--privileged",
-                        "true"
+                        "--privileged=true",
+                        ""
                     ]
                 ],
                 "environment": {

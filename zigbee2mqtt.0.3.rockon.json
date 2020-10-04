@@ -1,7 +1,7 @@
 {
     "Zigbee2MQTT": {
-        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon.",
-        "version": "0.3",
+        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon. Version: 0.3.a",
+        "version": "0.3.a",
         "website": "https://www.zigbee2mqtt.io/information/docker.html",
         "icon": "https://www.zigbee2mqtt.io/images/logo.png",
         "more_info": "https://github.com/koenkk/zigbee2mqtt",
@@ -9,7 +9,7 @@
         "containers": {
             "zigbee2mqtt_service": {
                 "image": "koenkk/zigbee2mqtt",
-                "tag": "1.10.0",
+                "tag": "1.15.0",
                 "launch_order": "1",
                 "volumes": {
                     "/app/data": {
@@ -20,15 +20,17 @@
                 },
                 "opts": [
                     [
-            			"-v",
-            			"/dev/udev:/run/udev:ro",
-                        "--privileged",
-                        "true"
-        		    ],
+            		"-v",
+            		"/dev/udev:/run/udev:ro"
+                    ],
                     [
-                        "--net",
-                        "host"
-                    ]
+                        "--privileged=true",
+                        ""
+        	    ],
+                    [
+			"--link",
+			"mosquitto_service"
+		    ]
                 ],
                 "environment": {
                     "TZ": {
