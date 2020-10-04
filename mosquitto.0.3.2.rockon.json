@@ -1,11 +1,11 @@
 {
     "Mosquitto": {
-        "description": "Eclipse Mosquitto An open source MQTT broker. Version 1.6.12",
-        "version": "0.3.1",
+        "description": "Eclipse Mosquitto An open source MQTT broker. Version 0.3.2 (1.6.12)",
+        "version": "0.3.2",
         "website": "https://mosquitto.org",
         "icon": "https://mosquitto.org/images/mosquitto-text-side-28.png",
         "more_info": "https://mosquitto.org/man/mosquitto-8.html",
-        "volume_add_support": true,
+        "volume_add_support": false,
         "containers": {
             "mosquitto_service": {
                 "image": "eclipse-mosquitto",
@@ -15,7 +15,8 @@
                     "1883": {
                         "description": "Used for MQTT (1883)",
                         "label": "MQTT protocol",
-                        "host_default": 1883
+                        "host_default": 1883,
+			"protocol": "tcp"
                     }
                 },
                 "volumes": {
