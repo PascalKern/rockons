@@ -25,6 +25,14 @@
 	    [
 		"--link",
 		"mosquitto_service"
+	    ],
+            [
+		"-e",
+		"AIOCOAP_CLIENT_TRANSPORT=tinydtls"
+	    ],
+	    [
+		"-e",
+		"AIOCOAP_SERVER_TRANSPORT=tinydtls"
 	    ]
 	],
         "volumes": {
