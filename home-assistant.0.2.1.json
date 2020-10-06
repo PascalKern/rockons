@@ -1,11 +1,11 @@
 {
   "Home Assistant": {
-    "description": "Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Version: 0.2 (0.115.6)",
+    "description": "Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Version: 0.2.1 (0.115.6)",
     "ui": {
       "slug": ""
     },
     "website": "https://home-assistant.io/",
-    "version": "0.2",
+    "version": "0.2.1",
     "containers": {
       "home-assistant_service": {
         "image": "homeassistant/home-assistant",
@@ -26,13 +26,9 @@
 		"--link",
 		"mosquitto_service"
 	    ],
-            [
-		"-e",
-		"AIOCOAP_CLIENT_TRANSPORT=tinydtls"
-	    ],
 	    [
-		"-e",
-		"AIOCOAP_SERVER_TRANSPORT=tinydtls"
+		"--net",
+		"host"
 	    ]
 	],
         "volumes": {
