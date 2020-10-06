@@ -25,6 +25,10 @@
 	    [
 		"--link",
 		"mosquitto_service"
+	    ],
+ 	    [
+		"--net=host",
+		""
 	    ]
 	],
         "volumes": {
