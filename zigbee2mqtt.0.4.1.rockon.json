@@ -1,7 +1,7 @@
 {
     "Zigbee2MQTT": {
-        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon. Version: 0.4",
-        "version": "0.4",
+        "description": "Run Zigbee2mqtt on this Rockstor instance as Rockon. Version: 0.4.1 (1.15.0)",
+        "version": "0.4.1",
         "website": "https://www.zigbee2mqtt.io/information/docker.html",
         "icon": "https://www.zigbee2mqtt.io/images/logo.png",
         "more_info": "https://github.com/koenkk/zigbee2mqtt",
@@ -45,7 +45,15 @@
                         "label": "Location of adapter (e.g. CC2531) (/dev/ttyACM0)",
                         "index": 1
                     }
-                }
+                },
+		"ports": {
+		    "8880": {
+                        "description": "Frontend zigbee2mqtt (8880)",
+                        "label": "Frontent",
+                        "host_default": 8880,
+			"protocol": "tcp"
+                    }
+		}
             }
         }
     }
