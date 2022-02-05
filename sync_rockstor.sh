@@ -7,7 +7,7 @@ set -e
 # for f in /root/rockons-metastore/*.json; do ln -s -f $f "/opt/rockstor/rockons-metastore/$(basename $f)"; done
 
 ROCK_BASE=/opt/rockstor
-METASTORE=/root/rockons-metastore
+METASTORE=/root/rockons
 
 rock_meta_store=$ROCK_BASE/rockons-metastore
 
