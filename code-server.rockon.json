@@ -1,0 +1,32 @@
+{
+    "Portainer": {
+        "containers": {
+            "portainer": {
+                "image": "linuxserver/code-server",
+                "tag": "4.0.2",
+                "launch_order": 1,
+                "ports": {
+                    "8443": {
+                        "description": "Port for web ui",
+                        "host_default": 8443,
+                        "label": "Web UI",
+                        "ui": true
+                    }
+                },
+                "volumes": {
+                    "/data": {
+                        "description": "Directory to use in the editor as 'root'",
+                        "label": "Root Directory"
+                    }
+                }
+            }
+        },
+        "description": "A web based code and file editor (based on Visual Code)",
+        "ui": {
+            "https": false,
+            "slug": ""
+        },
+        "website": "https://https://coder.com//",
+        "version": "1.0"
+    }
+}
