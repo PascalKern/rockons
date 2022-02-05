@@ -17,8 +17,8 @@
 					"9001": {
 						"description": "Port for Portainer Server",
 						"host_default": 9001,
-						"label": "Portainer server Access",
-						"ui": true
+						"label": "Portainer Server Access",
+						"ui": false
 					}
 				}
 			}
